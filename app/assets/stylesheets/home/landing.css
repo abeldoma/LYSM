@@ -1,0 +1,26 @@
+.topBar {
+  width: 100%;
+  height: 50px;
+  background-color: black; }
+
+.logo {
+  float: left;
+  width: 60px;
+  height: 35px; }
+
+.userAvatar {
+  float: right; }
+
+.navMenu {
+  display: block;
+  background-color: grey;
+  width: 100%;
+  height: 25px; }
+  .navMenu li {
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+    border: 2px bold;
+    border-color: black; }
+
+/*# sourceMappingURL=landing.css.map */

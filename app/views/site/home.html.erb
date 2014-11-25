@@ -1,3 +1,18 @@
-<nav></nav>
-<main></main>
-<footer></footer>
+<% content_for :content do %>
+
+<% end %>
+<%= yield :content %>
+
+<main class="cf">
+	<header class="topBar">
+		<img src="logo">
+		<img src="userAvatar">
+	</header>
+	<nav class="navMenu">
+		<ul>
+			<li>Stages</li>
+			<li>Bands</li>
+			<li></li>
+		</ul>
+	</nav>
+</main>
