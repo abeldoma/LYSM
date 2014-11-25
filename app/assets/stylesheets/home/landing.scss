@@ -1,38 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center; /* !!! */
+}
+
 .topBar {
 	margin-bottom: -16px;
 	width: 100%;
-	height: 50px;
-	background-color: black;
+	height: 65px;
+	background: linear-gradient(black, grey, grey, grey, grey, black);
 
-	img {
-		height: 35px;
-		width: 60px;
+	.logo {
+		height: 50px;
+		width: 100px;
 		padding-top: 7.5px;
+		float: left;
+		padding-left: 7.5px;
 	}
-		.logo {
-			float: left;
-			padding-left: 7.5px;
-		}
-
-		.userAvatar {
-			float: right;
-			padding-right: 7.5px;
-		}
 }
 
-.navMenu {
+.homeButtons {
 	display: block;
-	background-color: grey;
-	width: 100%;
-	height: 25px;
+	margin: 0 auto;
+	margin-top: 225px;
+}
 
-	li {
-		background-color: rgba(255,255,255, 0.3);
-		display: inline-block;
-		width: 80px;
-		height: 100%;
-		margin-top: 2.5px;
-		border-color: black;
-		text-align: center;
-	}
+.bandButton {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.stageButton {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.userButton {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
 }
