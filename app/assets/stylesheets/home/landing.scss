@@ -1,17 +1,23 @@
 .topBar {
+	margin-bottom: -16px;
 	width: 100%;
 	height: 50px;
 	background-color: black;
-}
 
-.logo {
-	float: left;
-	width: 60px;
-	height: 35px;
-}
+	img {
+		height: 35px;
+		width: 60px;
+		padding-top: 7.5px;
+	}
+		.logo {
+			float: left;
+			padding-left: 7.5px;
+		}
 
-.userAvatar {
-	float: right;
+		.userAvatar {
+			float: right;
+			padding-right: 7.5px;
+		}
 }
 
 .navMenu {
@@ -21,10 +27,12 @@
 	height: 25px;
 
 	li {
+		background-color: rgba(255,255,255, 0.3);
 		display: inline-block;
-		width: 50px;
+		width: 80px;
 		height: 100%;
-		border: 2px bold;
+		margin-top: 2.5px;
 		border-color: black;
+		text-align: center;
 	}
 }
