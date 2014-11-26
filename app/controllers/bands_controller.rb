@@ -24,5 +24,4 @@ class BandsController < ApplicationController
 		def band_params
 			params.require(:band).permit(:name, :email, :password, :password_confirmation)
 		end
-	end
 end

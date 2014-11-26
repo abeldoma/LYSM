@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="style/css" src="app/assets/stylesheets/users/new">
+<% provide(:title, 'Band Sign up') %>
+<header class="topBar">
+  <img class="logo" src="http://www.clker.com/cliparts/0/C/I/O/3/9/white-glossy-rectangle-button-md.png">
+</header>
+<h1>Band Sign up</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@band) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my band account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
