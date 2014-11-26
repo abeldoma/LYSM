@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'band_sessions/new'
+
   get 'sessions/new'
 
   get 'users/new'
@@ -11,7 +13,11 @@ get    'login'   => 'sessions#new'
 post   'login'   => 'sessions#create'
 delete 'logout'  => 'sessions#destroy'
 
-get 'bandSignup' => 'bands#new'
+get 'band_signup' => 'bands#new'
+get    'band_login'   => 'band_sessions#new'
+post   'band_login'   => 'band_sessions#create'
+delete 'band_logout'  => 'band_sessions#destroy'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 resources :users
