@@ -1,8 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  text-align: center;
-  /* !!! */ }
+  text-align: center; }
 
 .topBar {
   margin-bottom: -16px;
@@ -22,6 +21,7 @@ body {
   margin-top: 225px; }
 
 .bandButton {
+  size: 50%;
   width: 100px;
   height: 100px;
   display: inline-block; }
