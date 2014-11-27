@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126150014) do
+ActiveRecord::Schema.define(version: 20141127161732) do
 
   create_table "bands", force: true do |t|
     t.string   "name"
@@ -34,5 +34,14 @@ ActiveRecord::Schema.define(version: 20141126150014) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "videos", force: true do |t|
+    t.integer  "band_id"
+    t.string   "band_name"
+    t.string   "title"
+    t.string   "youtube_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
