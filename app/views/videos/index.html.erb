@@ -1,0 +1,9 @@
+<ul>
+  <% @video.each do |video| %>
+    <li>
+      <%= video.title %>
+      <%= embed(video.youtube_url) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
