@@ -1,6 +1,27 @@
 /* forms */
 
+
+body {
+  background-image: url(floor.png);
+  position:relative;
+  margin:0;
+  padding:0;
+  height: 100%;
+  text-align: center;
+}
+
+.row {
+  color: white;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  background-color: rgba(0,0,0,0.9);
+  border-radius: 10px;
+}
+
 input, textarea, select, .uneditable-input {
+  border-radius: 10px;
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
