@@ -18,10 +18,12 @@ get    'band_login'   => 'band_sessions#new'
 post   'band_login'   => 'band_sessions#create'
 delete 'band_logout'  => 'band_sessions#destroy'
 
+get 'videos' => 'videos#index'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 resources :users
 resources :bands
+resources :videos
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

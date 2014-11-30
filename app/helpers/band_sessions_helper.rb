@@ -10,7 +10,7 @@ module BandSessionsHelper
     cookies.permanent[:remember_token] = band.remember_token
   end
 
-  def current_band
+  def current_band(band)
     if (band_id = session[:band_id])
       @current_band ||= Band.find_by(id: band_id)
     elsif (band_id = cookies.signed[:band_id])
@@ -27,7 +27,7 @@ module BandSessionsHelper
   end
 
   def forget(band)
-    user.forget
+    band.forget
     cookies.delete(:band_id)
     cookies.delete(:remember_token)
   end

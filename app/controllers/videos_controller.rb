@@ -1,14 +1,12 @@
 class VideosController < ApplicationController
 
-	before_action :authenticate_band!
-
   def index
-    @band = current_band.find params[:band_id]
-    @videos = @band.videos
+    @videos = current_band.videos.all
+    render 'no_videos' if @videos.empty?
 	end
 
 	def new
-		@band = current_band.find params[:band_id]
+		@band = current_band params[:band_id]
 		@video = @band.videos.new
 	end
 
