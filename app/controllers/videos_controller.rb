@@ -1,6 +1,5 @@
 class VideosController < ApplicationController
 
-	before_action :authenticate_band!
 
   def index
     @band = current_band.find params[:band_id]
