@@ -1,0 +1,38 @@
+<link rel="stylesheet" type="style/css" src="app/assets/stylesheets/users/new">
+<% provide(:title, 'Add Video') %>
+<header class="topBar">
+  <div class="logo">
+    <p>|LYSM|</p>
+    <div class="sublogo">
+      <p class="sub_logo">LIVE</p>
+      <p class="sub_logo">YOUR</p>
+      <p class="sub_logo">SHOW</p>
+      <p class="sub_logo">MUCH</p>
+    </div>
+  </div>
+</header>
+<h1>Add Video</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+<% if @video.errors.any? %>
+    <ul>
+        <% @video.errors.full_messages.each do |error_msg| %>
+            <li><%= error_msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_for [@video] do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, size: 10 %>
+    <br/>
+    <%= f.label :youtube_url %>
+    <%= f.text_field :youtube_url, size: 10 %>
+    <br/>
+
+    <%= f.submit 'Save' %>
+<% end %>
+
+<%= link_to('Cancel', videos_path(@video)) %>
+</main>
