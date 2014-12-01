@@ -1,10 +1,13 @@
 class VideosController < ApplicationController
 
   def index
-    @videos = current_band.videos.all
+    @videos = Video.all
     render 'no_videos' if @videos.empty?
 	end
 
+  def show
+    @video = Video.find_by(title: params[:title])
+  end
 	def new
 		@band = current_band params[:band_id]
 		@video = @band.videos.new
