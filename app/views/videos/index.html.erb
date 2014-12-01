@@ -3,11 +3,12 @@
   <img class="logo" src="#">
 </header>
 <ul>
-  <% @videos.each do |videos| %>
+	<% @videos.each do |videos| %>
+		<li>
+			<%= @band.name %> - <%= videos.title %>
+    </li>
     <li>
-      <%= videos.title %>
       <%= embed(videos.youtube_url) %>
       <% end %>
     </li>
-  <% end %>
 </ul>
