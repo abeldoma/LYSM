@@ -3,7 +3,7 @@ class VideosController < ApplicationController
   def index
   	@band = current_band params[:band_name]
     @videos = Video.all
-    render 'no_videos' if @videos.empty?
+    render 'none' if @videos.empty?
 	end
 
   def show

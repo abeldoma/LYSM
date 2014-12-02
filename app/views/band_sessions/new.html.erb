@@ -1,19 +1,22 @@
+
 <% provide(:title, "Band Log in") %>
-<h1>Band Log in</h1>
+<%= render "shared/header" %>
+
 
 <div class="row">
+  <h1>Band Log in</h1>
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:band_session, url: band_login_path) do |f| %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-control' %>
+      <%= f.label :email %><br></br>
+      <%= f.text_field :email, class: 'form-control' %><br></br>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.label :password %><br></br>
+      <%= f.password_field :password, class: 'form-control' %><br></br>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.submit "Log in", class: "formButtons" %><br></br>
     <% end %>
 
-    <p>New band? <%= link_to "Sign up now!", band_signup_path %></p>
+    <p>New band? <%= link_to "Sign up now!", band_new_path, class: 'link'; %></p>
   </div>
 </div>

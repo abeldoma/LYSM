@@ -1,12 +1,21 @@
 <link rel="stylesheet" type="style/css" src="app/assets/stylesheets/users/new">
-<header class="topBar">
-  <img class="logo" src="#">
-</header>
+<%= render "shared/header" %>
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 <% provide(:title, @band.name) %>
 <h1>
-  <%= gravatar_for @band %>
   <%= @band.name %>
+</h1>
+<div class="gravatar">
+  <%= gravatar_for @band %>
+</div>
 <h2>
 	<%= @band.email %>
 </h2>
+<div>
+
+</div>
 <a href="../videos/new.html"><button class="homeButtons" id="userButton"> Add your video</button></a>
+<a href="../videos/index"><button class="homeButtons" id="userButton">View all videos</button></a>

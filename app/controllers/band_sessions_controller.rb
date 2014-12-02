@@ -8,7 +8,7 @@ class BandSessionsController < ApplicationController
     	log_in band
     	remember band
     	params[:band_session][:remember_me] == '1' ? remember(band) : forget(band)
-    	redirect_to band
+    	redirect_to videos_path(@band)
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'

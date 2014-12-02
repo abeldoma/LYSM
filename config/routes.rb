@@ -11,15 +11,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 root 'site#home'
 get 'signup' => 'users#new'
-get    'login'   => 'sessions#new'
-post   'login'   => 'sessions#create'
-delete 'logout'  => 'sessions#destroy'
+
+resources :sessions, only: [:new, :create, :destroy]
 
 get 'band_signup' => 'bands#new'
-get    'band_login'   => 'band_sessions#new'
-post   'band_login'   => 'band_sessions#create'
-delete 'band_logout'  => 'band_sessions#destroy'
 
+resources :band_sessions, only: [:new, :create, :destroy]
 
 get 'videos' => 'videos#index'
 post 'add_video' => 'videos#new'
@@ -27,7 +24,9 @@ post 'add_video' => 'videos#new'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 resources :users
-resources :bands
+resources :bands, only: :none do
+  resources :videos, only: :index
+end
 resources :videos
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,34 +1,24 @@
-<link rel="stylesheet" type="style/css" src="app/assets/stylesheets/users/new">
 <% provide(:title, 'Band Sign up') %>
-<header class="topBar">
-  <div class="logo">
-    <p>|LYSM|</p>
-    <div class="sublogo">
-      <p class="sub_logo">LIVE</p>
-      <p class="sub_logo">YOUR</p>
-      <p class="sub_logo">SHOW</p>
-      <p class="sub_logo">MUCH</p>
-    </div>
-  </div>
-</header>
-<h1>Band Sign up</h1>
+<%= render "shared/header" %>
+
 
 <div class="row">
+  <h1>Band Sign up</h1>
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@band) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.label :name %><br></br>
+      <%= f.text_field :name %><br></br>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.label :email %><br></br>
+      <%= f.text_field :email %><br></br>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.label :password %><br></br>
+      <%= f.password_field :password %><br></br>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.label :password_confirmation, "Confirmation" %><br></br>
+      <%= f.password_field :password_confirmation %><br></br>
 
-      <%= f.submit "Create my band account", class: "btn btn-primary" %>
+      <%= f.submit "Create band account", class: "formButtons" %>
     <% end %>
   </div>
 </div>

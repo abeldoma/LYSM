@@ -1,7 +1,17 @@
+<link rel="stylesheet" type="style/css" src="app/assets/stylesheets/users/new">
+<%= render "shared/header" %>
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 <% provide(:title, @user.name) %>
 <h1>
-  <%= gravatar_for @user %>
   <%= @user.name %>
+</h1>
+<div class="gravatar">
+  <%= gravatar_for @user %>
+</div>
 <h2>
 	<%= @user.email %>
 </h2>
+<a href="../videos/index"><button class="homeButtons" id="userButton">Vote for a Band</button></a>

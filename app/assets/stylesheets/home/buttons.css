@@ -73,21 +73,4 @@
   background: linear-gradient(black, rgba(0, 0, 0, 0.7));
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.6); }
 
-body {
-  background-image: url(floor.png);
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  text-align: center; }
-
-.topBar {
-  background: linear-gradient(black, rgba(0, 0, 0, 0.9));
-  width: 100%;
-  height: 75px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6); }
-
-.botBar {
-  background: linear-gradient(black, rgba(0, 0, 0, 0.9)); }
-
-/*# sourceMappingURL=landing.css.map */
+/*# sourceMappingURL=buttons.css.map */
