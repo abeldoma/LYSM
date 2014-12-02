@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create]
   resources :sessions, only: [:new, :create]
   resources :bands
+  resources :band_sessions, only: [:new, :create]
   resources :videos do
     patch :vote, on: :member
   end

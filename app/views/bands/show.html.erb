@@ -1,6 +1,4 @@
-<link rel="stylesheet" type="style/css" src="app/assets/stylesheets/users/new">
 <%= render "shared/header" %>
-
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -17,5 +15,9 @@
 <div>
 
 </div>
-<a href="../videos/new.html"><button class="homeButtons" id="userButton"> Add your video</button></a>
-<a href="../videos/index"><button class="homeButtons" id="userButton">View all videos</button></a>
+<%= link_to new_video_path do %>
+	<button class="homeButtons" id="userButton"> Add your video</button>
+<% end %>
+<%= link_to videos_path do %>
+	<button class="homeButtons" id="userButton">View all videos</button>
+<% end %>

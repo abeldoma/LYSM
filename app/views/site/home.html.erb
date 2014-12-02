@@ -1,4 +1,3 @@
-
 <% content_for :content do %>
 
 <% end %>
@@ -24,11 +23,11 @@
 		</div>
 	</header>
 	<section class="buttonsContainer">
-		<%= link_to new_band_path do %>
-			<button class="homeButtons">Sign Up as Band</button>
-		<%= link_to new_user_path do %>
-			<button class="homeButtons">Sign Up as User</button>
-		</section>
+		<a href="../bands/new.html"><button class="homeButtons">Sign Up as Band</button></a>
+		<a href="../sessions/new.html"><button class="homeButtons">Sign Up as User</button></a>
+	</section>
 	<footer class="botBar">
 	</footer>
 </main>
+<% end %>
+

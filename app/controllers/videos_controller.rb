@@ -1,7 +1,6 @@
 class VideosController < ApplicationController
 
   def index
-
   	@videos = Video.find_with_reputation(:votes, :all, order: 'votes desc')
 	end
 
@@ -25,6 +24,7 @@ class VideosController < ApplicationController
   end
 
   def vote
+
   	value = params[:type] == "up" ? 1 : -1
   	@video = Video.find(params[:id])
     unless @video.evaluators_for(:votes).include?(current_user)
@@ -32,7 +32,8 @@ class VideosController < ApplicationController
   	 flash[:success] = "Thanks for voting!"
     end
   	redirect_to current_user
-end
+  end
+
 
   private
 
