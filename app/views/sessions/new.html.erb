@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="style/css" src="app/assets/stylesheets/users/new">
+
 <% provide(:title, "Log in") %>
 <header class="topBar">
   <div class="logo">
@@ -16,22 +16,18 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <h1>Log in</h1>
-    <%= form_for(:session, url: login_path) do |f| %>
+    <%= form_for(:session, url: sessions_path) do |f| %>
 
       <%= f.label :email %><br></br>
       <%= f.text_field :email, class: 'form-control' %><br></br>
-
       <%= f.label :password %><br></br>
       <%= f.password_field :password, class: 'form-control' %><br></br>
-
       <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span>Remember me on this computer</span><br></br>
-      <% end %>
-
+      <%= f.check_box :remember_me %>
+      <span>Remember me on this computer</span><br></br>
       <%= f.submit "Log in", class: "formButtons" %>
+      <% end %>
     <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <p> New user? <%= link_to "Sign up now!", new_user_path %></p>
   </div>
 </div>

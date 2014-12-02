@@ -1,33 +1,18 @@
 Rails.application.routes.draw do
-  get 'band_sessions/new'
-
-  get 'sessions/new'
-
-  get 'users/new'
-
-  get 'bands/new'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-root 'site#home'
-get 'signup' => 'users#new'
-
-resources :sessions, only: [:new, :create, :destroy]
-
-get 'band_signup' => 'bands#new'
-
-resources :band_sessions, only: [:new, :create, :destroy]
-
-get 'videos' => 'videos#index'
-post 'add_video' => 'videos#new'
-
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-resources :users
-resources :bands, only: :none do
-  resources :videos, only: :index
-end
-resources :videos
+  root 'site#home'
+
+  resources :users, only: [:show, :new, :create]
+  resources :sessions, only: [:new, :create]
+  resources :bands
+  resources :videos do
+    patch :vote, on: :member
+  end
+
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

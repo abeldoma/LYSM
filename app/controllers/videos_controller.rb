@@ -1,9 +1,8 @@
 class VideosController < ApplicationController
 
   def index
-  	@band = current_band params[:band_name]
-    @videos = Video.all
-    render 'none' if @videos.empty?
+
+  	@videos = Video.find_with_reputation(:votes, :all, order: 'votes desc')
 	end
 
   def show
@@ -24,6 +23,16 @@ class VideosController < ApplicationController
 			render 'new'
 		end
   end
+
+  def vote
+  	value = params[:type] == "up" ? 1 : -1
+  	@video = Video.find(params[:id])
+    unless @video.evaluators_for(:votes).include?(current_user)
+  	 @video.add_evaluation(:votes, value, current_user)
+  	 flash[:success] = "Thanks for voting!"
+    end
+  	redirect_to current_user
+end
 
   private
 

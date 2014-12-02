@@ -31,6 +31,10 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt',               '3.1.7'
 
+gem 'activerecord-reputation-system', require: 'reputation_system'
+
+gem 'quiet_assets', group: :development
+
 group :production do
 # Use unicorn as the app server
 	gem 'unicorn',        '4.8.3'

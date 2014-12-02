@@ -15,14 +15,19 @@
 				<p class="sub_logo">MUCH</p>
 			</div>
 			<div class="logIn">
-				<a href="../band_sessions/new.html"><button class="buttonIn" id="bandIn">Band LogIn</button></a>
-				<a href="../sessions/new.html"><button class="buttonIn" id="userIn">User LogIn</button></a>
+				<%= link_to new_band_session_path do %>
+					<button class="buttonIn" id="bandIn">Band LogIn</button>
+				<%= link_to new_session_path do %>
+					<button class="buttonIn" id="userIn">User LogIn</button>
+				<% end %>
 			</div>
 		</div>
 	</header>
 	<section class="buttonsContainer">
-		<a href="../bands/new.html"><button class="homeButtons">Sign Up as Band</button></a>
-		<a href="../users/new.html"><button class="homeButtons">Sign Up as User</button></a>
+		<%= link_to new_band_path do %>
+			<button class="homeButtons">Sign Up as Band</button>
+		<%= link_to new_user_path do %>
+			<button class="homeButtons">Sign Up as User</button>
 		</section>
 	<footer class="botBar">
 	</footer>

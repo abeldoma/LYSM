@@ -73,7 +73,7 @@
   background: linear-gradient(black, rgba(0, 0, 0, 0.7));
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.6); }
 
-body {
+body#site-home {
   background-image: url(floor.png);
   position: relative;
   margin: 0;

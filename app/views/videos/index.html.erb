@@ -14,12 +14,19 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 <ul>
-	<% @videos.each do |videos| %>
+	<% @videos.each do |video| %>
 		<li>
-			<%= @band.name %> - <%= videos.title %>
+			<%= video.band.name %> - <%= video.title %>
     </li>
     <li>
-      <%= embed(videos.youtube_url) %>
-      <% end %>
+      <%= embed(video.youtube_url) %>
+
     </li>
+    <em>
+     <%= pluralize video.evaluators_for(:votes).count, "vote" %>
+     Reputation <%= video.reputation_for(:votes).to_i %>
+     <%= link_to "up", vote_video_path(video, type: "up"), method: "patch" %>
+     <%= link_to "down", vote_video_path(video, type: "down"), method: "patch" %>
+  </em>
+      <% end %>
 </ul>
