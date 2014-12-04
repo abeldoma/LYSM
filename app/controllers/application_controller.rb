@@ -18,4 +18,16 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def current_band
+    if (band_id = session[:band_id])
+      @current_band ||= Band.find_by(id: band_id)
+    elsif (band_id = cookies.signed[:band_id])
+      band = Band.find_by(id: band_id)
+      if band && band.authenticated?(cookies[:remember_token])
+        log_in band
+        @current_band = band
+      end
+    end
+  end
+  helper_method :current_band
 end

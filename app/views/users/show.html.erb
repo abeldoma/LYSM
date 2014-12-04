@@ -1,12 +1,13 @@
-<link rel="stylesheet" type="style/css" src="app/assets/stylesheets/users/new">
 <%= render "shared/header" %>
-
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 <% provide(:title, @user.name) %>
 <h1>
   <%= @user.name %>
+  <%= link_to logout_path, method: :delete do %>
+		<div class="logout"></div>
+<% end %>
 </h1>
 <div class="gravatar">
   <%= gravatar_for @user %>

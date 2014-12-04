@@ -1,7 +1,11 @@
 class VideosController < ApplicationController
 
   def index
-  	@videos = Video.find_with_reputation(:votes, :all, order: 'votes desc')
+    @videos = if (@filter_by = params[:filter_by] || "votes") == "votes"
+  	  Video.all.sort { |v1, v2| v2.reputation_for(:votes) <=> v1.reputation_for(:votes) }
+    else
+      Video.order("title asc")
+    end
 	end
 
   def show

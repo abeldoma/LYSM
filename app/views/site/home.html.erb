@@ -16,6 +16,7 @@
 			<div class="logIn">
 				<%= link_to new_band_session_path do %>
 					<button class="buttonIn" id="bandIn">Band LogIn</button>
+				<% end %>
 				<%= link_to new_session_path do %>
 					<button class="buttonIn" id="userIn">User LogIn</button>
 				<% end %>
@@ -23,11 +24,15 @@
 		</div>
 	</header>
 	<section class="buttonsContainer">
-		<a href="../bands/new.html"><button class="homeButtons">Sign Up as Band</button></a>
-		<a href="../sessions/new.html"><button class="homeButtons">Sign Up as User</button></a>
+		<%= link_to new_band_path do %>
+			<button class="homeButtons">Sign Up as Band</button>
+		<% end %>
+		<%= link_to new_user_path do %>
+			<button class="homeButtons">Sign Up as User</button>
+		<% end %>
 	</section>
 	<footer class="botBar">
 	</footer>
 </main>
-<% end %>
+
 

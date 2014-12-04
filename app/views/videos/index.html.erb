@@ -2,22 +2,34 @@
 <%= render "shared/header" %>
 
 <div class="row">
+  <h1>Video Ranking</h1>
   <div class="col-md-6 col-md-offset-3">
-<ul>
-	<% @videos.each do |video| %>
-		<li>
-			<%= video.band.name %> - <%= video.title %>
-    </li>
-    <li>
-      <%= embed(video.youtube_url) %>
-
-    </li>
-    <em>
-     <%= pluralize video.evaluators_for(:votes).count, "vote" %>
-     Reputation <%= video.reputation_for(:votes).to_i %>
-
-     <%= link_to "up", vote_video_path(video, type: "up"), method: "patch" %>
-     <%= link_to "down", vote_video_path(video, type: "down"), method: "patch" %>
-    </em>
+    <%= form_tag videos_path, method: :get, class: "filterbox" do %>
+      Filter by
+      <%= select_tag :filter_by, options_for_select(%w{votes name}, @filter_by) %>
+      <%= button_tag "refresh" %>
+    <% end %>
+    <ul>
+    	<% @videos.each do |video| %>
+    		<li>
+    			<%= video.band.name %> - <%= video.title %>
+        </li>
+        <li>
+          <%= embed(video.youtube_url) %>
+        </li>
+        <em>
+          <%= pluralize video.evaluators_for(:votes).count, "vote" %>
+          Reputation <%= video.reputation_for(:votes).to_i %>
+          <% if current_user %>
+            <% if current_user.voted_for?(video) %>
+              <p>You already voted</p>
+            <% else %>
+              <%= link_to "up", vote_video_path(video, type: "up"), method: "patch" %>
+              <%= link_to "down", vote_video_path(video, type: "down"), method: "patch" %>
+            <% end %>
+          <% end %>
+        </em>
       <% end %>
-</ul>
+    </ul>
+  </div>
+</div>

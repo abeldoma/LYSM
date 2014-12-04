@@ -1,5 +1,5 @@
 <% provide(:title, 'Sign up') %>
-<header class="topBar">
+<header class="sharedTopBar">
   <div class="logo">
     <p>|LYSM|</p>
     <div class="sublogo">
@@ -8,5 +8,20 @@
       <p class="sub_logo">SHOW</p>
       <p class="sub_logo">MUCH</p>
     </div>
+    <div class="sharedLogIn">
+			<% if current_user %>
+				<div>
+					<%= link_to user_path(:id) do %>
+  					<%= gravatar_for current_user %>
+  				<% end %>
+				</div>
+			<% elsif current_band %>
+				<div>
+					<%= link_to band_path(:id) do %>
+						<%= gravatar_for current_band %>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
   </div>
 </header>
