@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'site#home'
 
-  delete 'logout'  => 'sessions#destroy'
+  get 'logout'  => 'site#home'
+  get 'band_logout' => 'site#home'
 
   resources :users, only: [:show, :new, :create]
   resources :sessions, only: [:new, :create]
-  resources :bands
+  resources :bands, only: [:show, :new, :create]
   resources :band_sessions, only: [:new, :create]
   resources :videos do
     patch :vote, on: :member

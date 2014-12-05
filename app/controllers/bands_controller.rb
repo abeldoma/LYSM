@@ -24,4 +24,11 @@ class BandsController < ApplicationController
 		def band_params
 			params.require(:band).permit(:name, :email, :password, :password_confirmation)
 		end
+
+		def logged_in_band
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
 end

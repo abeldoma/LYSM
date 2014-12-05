@@ -5,6 +5,9 @@
 <% provide(:title, @band.name) %>
 <h1>
   <%= @band.name %>
+  <%= link_to band_logout_path, method: :get do %>
+		<button class="logout"><b>Log <br> Out</b></button>
+	<% end %>
 </h1>
 <div class="gravatar">
   <%= gravatar_for @band %>

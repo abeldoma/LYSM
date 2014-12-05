@@ -7,7 +7,7 @@
     <%= form_tag videos_path, method: :get, class: "filterbox" do %>
       Filter by
       <%= select_tag :filter_by, options_for_select(%w{votes name}, @filter_by) %>
-      <%= button_tag "refresh" %>
+      <%= button_tag "refresh", class: "formButtons", id: "refresh" %>
     <% end %>
     <ul>
     	<% @videos.each do |video| %>
@@ -27,6 +27,8 @@
               <%= link_to "up", vote_video_path(video, type: "up"), method: "patch" %>
               <%= link_to "down", vote_video_path(video, type: "down"), method: "patch" %>
             <% end %>
+          <% else  %>
+            <p>Sorry, You can't vote</p>
           <% end %>
         </em>
       <% end %>

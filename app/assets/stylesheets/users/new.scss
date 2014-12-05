@@ -2,6 +2,7 @@
 
 body {
   background-image: url(../floor.png);
+  background-position: fixed;
   position:relative;
   margin:0;
   padding:0;
@@ -12,6 +13,25 @@ body {
     }
 }
 
+.alert {
+  position: absolute;
+  margin-left: 518px;
+  margin-top: -31px;
+  font-size: 25px;
+}
+
+.alert-danger {
+  color: rgb(250,0,0);
+  margin-left: 500px;
+}
+
+
+.alert-success {
+  margin-left: 588px;
+  color: rgb(0, 250, 0);
+}
+
+
 .sharedTopBar {
   position: fixed;
   margin-top: -115px;
@@ -19,6 +39,16 @@ body {
   width: 100%;
   height: 75px;
   box-shadow: 0 2px 2px rgba(0,0,0,0.6);
+
+  .logo {
+    cursor: pointer;
+    color: white;
+
+    .link {
+      text-decoration: none;
+      color: white;
+    }
+  }
 }
 
 
@@ -40,10 +70,22 @@ body {
     border-radius: 10px;
     padding: 5px;
     margin-top: 10px;
+    text-align: center;
+    padding-left: 38px;
   }
 
     .logout {
-      background-image: url(../logout.png)
+      background-image: url(../logout.jpg);
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      float: right;
+      margin-right: 7px;
+      border: none;
+      border-radius: 15px;
+      margin-top: 3px;
+      font-size: 10px;
+      text-align: center;
     }
 }
 
@@ -82,6 +124,7 @@ input {
   position: absolute;
   width: 75px;
   height:75px;
+  border-radius: 50%;
 }
 
 .filterbox {
@@ -89,6 +132,13 @@ input {
   align: center;
 }
 
+.video {
+  li {
+    margin-top: 15px;
+    margin-bottom: 10px;
+
+  }
+}
 
 
 

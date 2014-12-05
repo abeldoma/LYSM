@@ -5,9 +5,9 @@
 <% provide(:title, @user.name) %>
 <h1>
   <%= @user.name %>
-  <%= link_to logout_path, method: :delete do %>
-		<div class="logout"></div>
-<% end %>
+  <%= link_to logout_path, method: :get do %>
+		<button class="logout"><b>Log <br> Out</b></button>
+	<% end %>
 </h1>
 <div class="gravatar">
   <%= gravatar_for @user %>

@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  def current_band
+  def current_band(band_id)
     if (band_id = session[:band_id])
       @current_band ||= Band.find_by(id: band_id)
     elsif (band_id = cookies.signed[:band_id])
