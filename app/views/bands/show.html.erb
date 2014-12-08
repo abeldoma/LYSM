@@ -2,22 +2,22 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-<% provide(:title, @band.name) %>
-<h1>
-  <%= @band.name %>
-  <%= link_to band_logout_path, method: :get do %>
-		<button class="logout"><b>Log <br> Out</b></button>
-	<% end %>
-</h1>
-<div class="gravatar">
-  <%= gravatar_for @band %>
+		<% provide(:title, @band.name) %>
+		<h1>
+		  <%= @band.name %>
+		  <%= link_to band_logout_path, method: :get do %>
+				<button class="logout"><b>Log <br> Out</b></button>
+			<% end %>
+		</h1>
+		<div class="gravatar">
+		  <%= gravatar_for @band %>
+		</div>
+		<h2>
+			<%= @band.email %>
+		</h2>
+	</div>
 </div>
-<h2>
-	<%= @band.email %>
-</h2>
-<div>
 
-</div>
 <%= link_to new_video_path do %>
 	<button class="homeButtons" id="userButton"> Add your video</button>
 <% end %>

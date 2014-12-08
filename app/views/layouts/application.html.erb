@@ -10,11 +10,13 @@
       </script>
     <![endif]-->
   </head>
-<body id=<%= body_id %>>
+<body id="<%= body_id %>">
   <div class="container">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>">
+        <%= message %>
+      </div>
+    <% end %>
   </div>
   <%= yield %>
 </body>
