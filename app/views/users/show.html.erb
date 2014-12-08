@@ -1,20 +1,22 @@
 <%= render "shared/header" %>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-<% provide(:title, @user.name) %>
-<h1>
-  <%= @user.name %>
-  <%= link_to logout_path, method: :get do %>
-		<button class="logout"><b>Log <br> Out</b></button>
-	<% end %>
-</h1>
-<div class="gravatar">
-  <%= gravatar_for @user %>
+	<div class="col-md-6 col-md-offset-3">
+		<% provide(:title, @user.name) %>
+		<h1>
+			<%= @user.name %>
+			<%= link_to logout_path, method: :get do %>
+				<button class="logout"><b>Log <br> Out</b></button>
+			<% end %>
+		</h1>
+		<div class="gravatar">
+			<%= gravatar_for @user %>
+		</div>
+		<h2>
+			<%= @user.email %>
+		</h2>
+		<%= link_to videos_path do %>
+			<button class="homeButtons" id="userButton">Vote for a Band</button>
+		<% end %>
+	</div>
 </div>
-<h2>
-	<%= @user.email %>
-</h2>
-<%= link_to videos_path do %>
-	<button class="homeButtons" id="userButton">Vote for a Band</button>
-<% end %>

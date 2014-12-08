@@ -2,22 +2,23 @@
 <header class="sharedTopBar">
   <div class="logo">
     <%= link_to root_path, class: "link" do %>
-    <p>|LYSM|</p>
-    <div class="sublogo">
-      <p class="sub_logo">LIVE</p>
-      <p class="sub_logo">YOUR</p>
-      <p class="sub_logo">SHOW</p>
-      <p class="sub_logo">MUCH</p>
+      <p>|LYSM|</p>
+      <div class="sublogo">
+        <p class="sub_logo">LIVE</p>
+        <p class="sub_logo">YOUR</p>
+        <p class="sub_logo">SHOW</p>
+        <p class="sub_logo">MUCH</p>
+      </div>
     <% end %>
-    </div>
     <div class="sharedLogIn">
 			<div class="logIn">
-			<%= link_to new_band_session_path do %>
-				<button class="buttonIn" id="bandIn">Band LogIn</button>
-			<% end %>
-			<%= link_to new_session_path do %>
-				<button class="buttonIn" id="userIn">User LogIn</button>
-			<% end %>
-		</div>
+  			<%= link_to new_band_session_path do %>
+  				<button class="buttonIn" id="bandIn">Band LogIn</button>
+  			<% end %>
+  			<%= link_to new_session_path do %>
+  				<button class="buttonIn" id="userIn">User LogIn</button>
+  			<% end %>
+		  </div>
+    </div>
   </div>
 </header>
